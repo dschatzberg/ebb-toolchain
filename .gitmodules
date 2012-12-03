@@ -1,0 +1,18 @@
+[submodule "binutils"]
+	path = binutils
+	url = git://github.com/dschatzberg/binutils.git
+[submodule "gcc"]
+	path = gcc
+	url = git://github.com/dschatzberg/gcc.git
+[submodule "gmp"]
+	path = gmp
+	url = git://github.com/dschatzberg/gmp.git
+[submodule "mpc"]
+	path = mpc
+	url = git://github.com/dschatzberg/mpc.git
+[submodule "mpfr"]
+	path = mpfr
+	url = git://github.com/dschatzberg/mpfr.git
+[submodule "newlib"]
+	path = newlib
+	url = git://github.com/dschatzberg/newlib.git
