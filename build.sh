@@ -39,7 +39,15 @@ make install || exit
 cd ..
 
 cd gcc/libstdc++-v3
-autoconf || exit
+autoconf2.64 || exit
+cd ../..
+
+cd gcc/libgcc
+autoconf2.64 || exit
+cd ../..
+
+cd gcc/gcc
+autoconf2.64 || exit
 cd ../..
 
 cd build-gcc
@@ -51,14 +59,17 @@ make install-gcc || exit
 cd ..
 
 cd newlib/newlib/libc/sys
-autoconf || exit
+autoconf2.64 || exit
 cd ebbrt
 autoreconf || exit
 cd ../../../../..
 
+PATH=$PATH:$PREFIX/bin
+
 cd build-newlib
-../newlib/configure --target=$TARGET --prefix=$PREFIX --with-gmp=$PREFIX \
-    --with-mpfr=$PREFIX --with-mpc=$PREFIX --enable-newlib-hw-fp || exit
+../newlib/configure --target=$TARGET --prefix=$PREFIX \
+    --with-gmp=$PREFIX --with-mpfr=$PREFIX --with-mpc=$PREFIX \
+    --enable-newlib-hw-fp || exit
 make -j$NCPU || exit
 make install || exit
 cd ..
